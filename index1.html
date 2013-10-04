@@ -46,8 +46,6 @@ function pullDownAction () {
 function loaded() {
   pullDownEl = document.getElementById('pullDown');
   pullDownOffset = pullDownEl.offsetHeight;
-  pullUpEl = document.getElementById('pullUp'); 
-  pullUpOffset = pullUpEl.offsetHeight;
   scrollNav = new iScroll('nav-panel');
 
   myScroll = new iScroll('wrapper', {
@@ -57,10 +55,7 @@ function loaded() {
       if (pullDownEl.className.match('loading')) {
         pullDownEl.className = '';
         pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
-      } else if (pullUpEl.className.match('loading')) {
-        pullUpEl.className = '';
-        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-      }
+      } 
     },
     onScrollMove: function () {
       if (this.y > 5 && !pullDownEl.className.match('flip')) {
@@ -71,26 +66,14 @@ function loaded() {
         pullDownEl.className = '';
         pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Pull down to refresh...';
         this.minScrollY = -pullDownOffset;
-      } else if (this.y < (this.maxScrollY - 5) && !pullUpEl.className.match('flip')) {
-        pullUpEl.className = 'flip';
-        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Release to refresh...';
-        this.maxScrollY = this.maxScrollY;
-      } else if (this.y > (this.maxScrollY + 5) && pullUpEl.className.match('flip')) {
-        pullUpEl.className = '';
-        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Pull up to load more...';
-        this.maxScrollY = pullUpOffset;
-      }
+      } 
     },
     onScrollEnd: function () {
       if (pullDownEl.className.match('flip')) {
         pullDownEl.className = 'loading';
         pullDownEl.querySelector('.pullDownLabel').innerHTML = 'Loading...';        
         pullDownAction(); // Execute custom function (ajax call?)
-      } else if (pullUpEl.className.match('flip')) {
-        pullUpEl.className = 'loading';
-        pullUpEl.querySelector('.pullUpLabel').innerHTML = 'Loading...';        
-        pullUpAction(); // Execute custom function (ajax call?)
-      }
+      } 
     }
   });
   
@@ -222,7 +205,9 @@ document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 2
     <div id="pullDown">
       <span class="pullDownIcon"></span><span class="pullDownLabel">Pull down to refresh...</span>
     </div>
-
+<ul id="thelist">
+  <li></li>
+</ul>
     <div class="ui-grid-a">
             <div class="ui-block-a" style="height:200px;">
             <div id="flipRoot1" data-role="flip1" data-flip-show-pager="false" data-flip-forward-dir="btot" data-flip-loop="true" height="100">
@@ -263,9 +248,7 @@ document.addEventListener('DOMContentLoaded', function () { setTimeout(loaded, 2
             <div class="ui-block-b"><div class="p"><p>Page 1</p></div>
             </div>
         </div>
-    <div id="pullUp">
-      <span class="pullUpIcon"></span><span class="pullUpLabel">Pull up to refresh...</span>
-    </div>
+
   </div>
 </div>
     </div>
