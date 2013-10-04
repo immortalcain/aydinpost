@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <title></title>
+  
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.css" />
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.3.2/jquery.mobile-1.3.2.min.js"></script>
+
+
+<!-- load flip lib -->
+    <link rel="stylesheet" href="css/jquery.mobile.flip.css" />
+    <script type="text/javascript" src="js/jquery.mobile.flip.js"></script>
+</head>
+	<body>
+		<div data-role="page" class="ui-responsive-panel">
+
+			<div data-role="header" data-theme="a">
+        <h2>
+            Heading
+        </h2>
+        <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+        <div data-type="horizontal" data-role="controlgroup" class="ui-btn-right">  
+        <a href="#nav-panel" data-icon="star" data-role="button" data-iconpos="notext">Menu</a>
+        <a href="#nav-panel" data-icon="search" data-role="button" data-iconpos="notext">Menu</a>
+        </div>
+			</div><!-- /header -->
+			<div data-role="content">
+				<div class="ui-grid-a">
+            <div class="ui-block-a" style="height:200px;">
+            <div id="flipRoot" data-role="flip" data-flip-show-pager="false" data-flip-forward-dir="btot" data-flip-loop="true" height="100">
+              <div class="p">Page 1</div>
+              <div class="p">Page 2</div>
+              <div class="p">Page 3</div>
+            </div>
+            </div>
+            <div class="ui-block-b" style="height:200px;">
+            <div id="flipRoot2" data-role="flip2" data-flip-show-pager="false" data-flip-forward-dir="btot" data-flip-loop="true" height="100">
+              <div class="p">Page 1</div>
+              <div class="p">Page 2</div>
+              <div class="p">Page 3</div>
+            </div>
+            </div>
+            <div class="ui-block-a">asdasd
+            </div>
+            <div class="ui-block-b">asdasd
+            </div>
+            <div class="ui-block-a">asdasd
+            </div>
+            <div class="ui-block-b">asdasd
+            </div>
+            <div class="ui-block-a">asdasd
+            </div>
+            <div class="ui-block-b">asdasd
+            </div>
+            <div class="ui-block-a">asdasd
+            </div>
+            <div class="ui-block-b">asdasd
+            </div>
+            <div class="ui-block-a">asdasd
+            </div>
+            <div class="ui-block-b">asdasd
+            </div>
+        </div>
+
+			</div><!-- /content -->
+
+			<div class="jqm-footer">
+				<p class="jqm-version"></p>
+				<p>&copy; 2010, 2013 jQuery Foundation and other contributors</p>
+			</div><!-- /jqm-footer -->
+
+
+				<div data-role="panel" data-position="left" data-position-fixed="false" data-display="reveal" id="nav-panel" data-theme="a">
+
+					<ul data-role="listview" data-theme="a" data-divider-theme="a" style="margin-top:-16px;" class="nav-search">
+						<li data-icon="delete" style="background-color:#111;">
+							<a href="#" data-rel="close">Close menu</a>
+						</li>
+						<li data-filtertext="wai-aria voiceover accessibility screen reader">
+							<a href="#">Accessibility</a>
+						</li>
+						<li data-filtertext="accordions collapsible set collapsible-set collapsed">
+							<a href="#">Accordions</a>
+						</li>
+						<li data-filtertext="ajax navigation model">
+							<a href="#">Ajax navigation model</a>
+						</li>
+						<li data-filtertext="anatomy of page viewport">
+							<a href="#">Anatomy of a page</a>
+						</li>
+						<li data-filtertext="events api animationComplete transition css">
+							<a href="../api/events.html">Animation events</a>
+						</li>
+						<li data-filtertext="listview autodivider">
+							<a href="../lists/lists-autodividers.html">Automatic listview dividers</a>
+						</li>
+						<li data-filtertext="button link submit cancel image reset mini buttonmarkup enable disable">
+							<a href="../buttons/buttons-types.html">Buttons</a>
+						</li>
+						<li data-filtertext="button icon">
+							<a href="../buttons/buttons-icons.html">Button icons</a>
+						</li>
+						<li data-filtertext="data-prefetch loadpage domCache data-dom-cache size clear cleanup pagehide lazyload spinner loader">
+							<a href="../pages/page-cache.html">Caching pages</a>
+						</li>
+						<li data-filtertext="input forms multi select checkbox checks grouped horizontal toggle legend">
+							<a href="../forms/checkboxes/">Checkbox</a>
+						</li>
+						<li data-filtertext="button icon">
+							<a href="buttons/buttons-icons.html">Button icons</a>
+						</li>
+						<li data-filtertext="data-prefetch loadpage domCache data-dom-cache size clear cleanup pagehide lazyload spinner loader">
+							<a href="../pages/page-cache.html">Caching pages</a>
+						</li>
+						<li data-filtertext="input forms multi select checkbox checks grouped horizontal toggle legend">
+							<a href="../forms/checkboxes/">Checkbox</a>
+						</li>
+					</ul>
+
+					<!-- panel content goes here -->
+				</div><!-- /panel -->
+				<script type="text/javascript">
+$(document).ready(function() {
+  $("#flipRoot2").flip();
+});
+				</script>
+		</div><!-- /page -->
+	</body>
+</html>
