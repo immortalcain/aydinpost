@@ -18,5 +18,6 @@
     <!-- <preference name="orientation" value="portrait" /> -->
     <access origin="*" subdomains="true" />
     <gap:platform name="android" />
+    <gap:platform name="ios" />
     <!-- <icon src="pics/dergi.png" /> -->
 </widget>
